@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Consultar Clima</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="col-xs-6" id="map"></div>
+
+<div class="col-xs-6">
+	<h1 class="text-center">Google Maps APP</h1>
+		<div class="form-group">
+				<select class="form-control" id="select">
+					<option>Seleccione una ubicación</option>
+					<option value="scl">Santiago, Región Metropolitana</option>
+					<option value="cma">Comuna Maipú</option>
+					<option value="cpu">Comuna Pudahuel</option>
+					<option value="cpa">Comuna Puente Alto</option>
+				</select>
+			<img src="" class="img-responsive">
+		</div>
+</div>
+
+
+<div class="col-xs-6" hidden="true" id="escondido">
+	<h2 id="resumen"></h2>
+		<table class="table table-striped">
+			<tr>
+				<td>Sensación térmica</td>
+				<td id="sensacion"></td>
+			</tr>
+			<tr>
+				<td>Probabilidad de lluvia</td>
+				<td id="probabilidad"></td>
+			</tr>
+			<tr>
+				<td>Humedad relativa</td>
+				<td id="humedad"></td>
+			</tr>
+		</table>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>	
+<script type="text/javascript" src="app.js"></script>
+<script>
+
+      function initMap() {
+        var stgo_coords = {lat: -33.4488897, lng: -70.6692655};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: stgo_coords
+        });
+        var marker = new google.maps.Marker({
+          position: stgo_coords,
+          map: map
+        });
+      }
+
+
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXm557WoiyI3-LldPyC6W51Ch78vrt810&callback=initMap"></script>
+</body>
+</html>
