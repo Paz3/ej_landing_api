@@ -1,3 +1,15 @@
+function initMap() {
+        var stgo_coords = {lat: -33.4488897, lng: -70.6692655};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: stgo_coords
+        });
+        var marker = new google.maps.Marker({
+          position: stgo_coords,
+          map: map
+    });
+ }
+
 $(document).ready(function() {
 
 	//De ésta manera estoy yendo a buscar los elementos al DOM sólo una vez, los almaceno en éstas variables y cuando las quiero utilizar las llamo desde declarandolas dentro de la función)
